@@ -1,4 +1,7 @@
 package Roguelike;
 
-public class PlayerTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+class PlayerTest {
+
 }
