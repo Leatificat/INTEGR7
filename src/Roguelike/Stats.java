@@ -16,24 +16,43 @@ public class Stats {
         this.endurance = endurance;
     }
     
+    public boolean isOverflow(byte old, byte toAdd){
+        if((int)old+toAdd != old+toAdd){
+            return false;
+        }
+        return true;
+    }
+    
     public byte getStrength(){
         return strength;
     }
     
     public void increaseStrength(byte amountToAdd){
-        byte newValue = (byte)(strength + amountToAdd);
-        if(newValue != (int)(strength + amountToAdd)){
+        if(isOverflow(strength, amountToAdd)){
             new ArithmeticException();
         }
-        strength = newValue;
+        strength = (byte)(strength + amountToAdd);
     }
     
     public byte getDexterity(){
         return dexterity;
     }
+    public void increaseDexterity(byte amountToAdd){
+        if(isOverflow(dexterity, amountToAdd)){
+            new ArithmeticException();
+        }
+        dexterity = (byte)(dexterity + amountToAdd);
+    }
     
     public byte getEndurance(){
         return endurance;
+    }
+    
+    public void increaseEndurance(byte amountToAdd){
+        if(isOverflow(endurance, amountToAdd)){
+            new ArithmeticException();
+        }
+        endurance = (byte)(endurance + amountToAdd);
     }
     
     //Detta är sekundära stats, de räknas ut utifrån primära stats och sparas inte separat

@@ -17,6 +17,9 @@ public class StatsTest {
         s.increaseStrength((byte)1);
         assertEquals(2, s.getStrength());
     }
+    
+
+    
 /*    @Test
     void increaseStrengthOverflow() {
         setup();
@@ -30,11 +33,27 @@ public class StatsTest {
         setup();
         assertEquals(2, s.getDexterity());
     }
+    
+    @Test
+    void increaseDexterity(){
+        setup();
+        s.increaseDexterity((byte)1);
+        assertEquals(3, s.getDexterity());
+    }
+    
     @Test
     void getEndurance(){
         setup();
         assertEquals(3, s.getEndurance());
     }
+    
+    @Test
+    void increaseEndurance(){
+        setup();
+        s.increaseEndurance((byte)1);
+        assertEquals(4, s.getEndurance());
+    }
+    
     @Test
     void getHP(){
         setup();
