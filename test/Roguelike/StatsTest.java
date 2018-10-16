@@ -9,8 +9,21 @@ public class StatsTest {
     @Test
     void getStrength(){
         setup();
-        assertEquals(1, s.getStrenght());
+        assertEquals(1, s.getStrength());
     }
+    @Test
+    void increaseStrength(){
+        setup();
+        s.increaseStrength((byte)1);
+        assertEquals(2, s.getStrength());
+    }
+/*    @Test
+    void increaseStrengthOverflow() {
+        setup();
+        assertThrows(ArithmeticException.class, () -> {
+            s.increaseStrength((byte) 255);
+        });
+    }*/
     
     @Test
     void getDexterity(){

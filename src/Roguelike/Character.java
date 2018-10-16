@@ -2,13 +2,13 @@ package Roguelike;
 
 public class Character extends GameObject{
     
-    Stats stats;
-    char graphicalRepresentation;
+    private Stats stats;
+    private char graphicalRepresentation;
     
     
-    public Character(Stats stats){
+    public Character(Stats stats, char graphicalRepresentation){
         this.stats = stats;
-        graphicalRepresentation = 'P';
+        this.graphicalRepresentation = graphicalRepresentation;
     }
     public Stats getStats(){
         return stats;

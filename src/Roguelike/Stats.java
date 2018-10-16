@@ -16,8 +16,16 @@ public class Stats {
         this.endurance = endurance;
     }
     
-    public byte getStrenght(){
+    public byte getStrength(){
         return strength;
+    }
+    
+    public void increaseStrength(byte amountToAdd){
+        byte newValue = (byte)(strength + amountToAdd);
+        if(newValue != (int)(strength + amountToAdd)){
+            new ArithmeticException();
+        }
+        strength = newValue;
     }
     
     public byte getDexterity(){
@@ -31,7 +39,7 @@ public class Stats {
     //Detta är sekundära stats, de räknas ut utifrån primära stats och sparas inte separat
     
     //HP är 2*endurance+strength.
-    //Risk för overflow
+    //Risk för overflow.
     public int getHP(){
         return (endurance*2)+strength;
     }
