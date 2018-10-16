@@ -7,7 +7,7 @@ public class CharacterTest {
     Character c;
     Stats s;
     void setup(){
-        Stats s = new Stats((byte)1, (byte)2, (byte)3);
+        s = new Stats((byte)1, (byte)2, (byte)3);
         c = new Character(s);
     }
     
@@ -16,6 +16,7 @@ public class CharacterTest {
         setup();
         assertEquals(s, c.getStats());
     }
+    @Test
     void getGraphicalRepresentation(){
         setup();
         assertEquals('P', c.getGraphicalRepresentation());
