@@ -1,5 +1,5 @@
 package Roguelike;
 
-public class GameObject{
-
+public abstract class GameObject{
+    public abstract char getGraphicalRepresentation();
 }
