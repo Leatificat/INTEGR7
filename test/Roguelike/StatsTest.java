@@ -24,7 +24,7 @@ public class StatsTest {
     void increaseStrengthOverflow() {
         setup();
         assertThrows(ArithmeticException.class, () -> {
-            s.increaseStrength((byte) 255);
+            s.increaseStrength((byte) 127);
         });
     }*/
     

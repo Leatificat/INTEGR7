@@ -62,4 +62,6 @@ public class Stats {
     public int getHP(){
         return (endurance*2)+strength;
     }
+    
+    
 }
