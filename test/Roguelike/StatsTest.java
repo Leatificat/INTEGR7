@@ -59,6 +59,11 @@ public class StatsTest {
         setup();
         assertEquals(7, s.getHP());
     }
+    @Test
+    void getSpeed(){
+        setup();
+        assertEquals(2.5, s.getSpeed());
+    }
     
     private void setup(){
         s = new Stats((byte)1, (byte)2, (byte)3);

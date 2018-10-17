@@ -63,5 +63,7 @@ public class Stats {
         return (endurance*2)+strength;
     }
     
+    public double getSpeed(){return (double)((endurance+dexterity))/2;}
+    
     
 }
