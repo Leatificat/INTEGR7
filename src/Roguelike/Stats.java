@@ -17,8 +17,8 @@ public class Stats {
     }
     
     public boolean isOverflow(byte old, byte toAdd){
-        if((int)old+toAdd != old+toAdd){
-            return false;
+        if((int)((int)old+(int)toAdd) != (byte)(old+toAdd)){
+            throw new ArithmeticException("Overflow in stat!");
         }
         return true;
     }
@@ -28,9 +28,7 @@ public class Stats {
     }
     
     public void increaseStrength(byte amountToAdd){
-        if(isOverflow(strength, amountToAdd)){
-            new ArithmeticException();
-        }
+        isOverflow(strength, amountToAdd);
         strength = (byte)(strength + amountToAdd);
     }
     
@@ -38,9 +36,7 @@ public class Stats {
         return dexterity;
     }
     public void increaseDexterity(byte amountToAdd){
-        if(isOverflow(dexterity, amountToAdd)){
-            new ArithmeticException();
-        }
+        isOverflow(dexterity, amountToAdd);
         dexterity = (byte)(dexterity + amountToAdd);
     }
     
@@ -49,9 +45,7 @@ public class Stats {
     }
     
     public void increaseEndurance(byte amountToAdd){
-        if(isOverflow(endurance, amountToAdd)){
-            new ArithmeticException();
-        }
+        isOverflow(endurance, amountToAdd);
         endurance = (byte)(endurance + amountToAdd);
     }
     

@@ -1,7 +1,7 @@
 package Roguelike;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class StatsTest {
     Stats s;
@@ -20,13 +20,13 @@ public class StatsTest {
     
 
     
-/*    @Test
+    @Test
     void increaseStrengthOverflow() {
         setup();
         assertThrows(ArithmeticException.class, () -> {
             s.increaseStrength((byte) 127);
         });
-    }*/
+    }
     
     @Test
     void getDexterity(){
