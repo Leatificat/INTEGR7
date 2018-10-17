@@ -33,12 +33,21 @@ public class StatsTest {
         setup();
         assertEquals(2, s.getDexterity());
     }
+
     
     @Test
     void increaseDexterity(){
         setup();
         s.increaseDexterity((byte)1);
         assertEquals(3, s.getDexterity());
+    }
+    
+    @Test
+    void increaseDexterityOverflow(){
+        setup();
+        assertThrows(ArithmeticException.class, () -> {
+            s.increaseDexterity((byte) 127);
+        });
     }
     
     @Test
@@ -52,6 +61,22 @@ public class StatsTest {
         setup();
         s.increaseEndurance((byte)1);
         assertEquals(4, s.getEndurance());
+    }
+    
+    @Test
+    void increaseEnduranceOverflow(){
+        setup();
+        assertThrows(ArithmeticException.class, () -> {
+            s.increaseEndurance((byte) 127);
+        });
+    }
+    
+    @Test
+    void enduranceBelowLowerBound(){
+        setup();
+        assertThrows(ArithmeticException.class, () -> {
+            s.increaseEndurance((byte) -4);
+        });
     }
     
     @Test

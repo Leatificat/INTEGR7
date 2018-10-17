@@ -20,6 +20,9 @@ public class Stats {
         if((int)((int)old+(int)toAdd) != (byte)(old+toAdd)){
             throw new ArithmeticException("Overflow in stat!");
         }
+        if(old+toAdd < 1){
+            throw new ArithmeticException("Stat below lower bound!");
+        }
         return true;
     }
     
