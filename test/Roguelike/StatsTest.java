@@ -14,7 +14,7 @@ public class StatsTest {
     @Test
     void increaseStrength(){
         setup();
-        s.increaseStrength((byte)1);
+        s.addToStrength((byte)1);
         assertEquals(2, s.getStrength());
     }
     
@@ -24,7 +24,13 @@ public class StatsTest {
     void increaseStrengthOverflow() {
         setup();
         assertThrows(ArithmeticException.class, () -> {
-            s.increaseStrength((byte) 127);
+            s.addToStrength((byte) 127);
+        });
+    }
+    void strengthBelowLowerBound(){
+        setup();
+        assertThrows(ArithmeticException.class, () -> {
+            s.addToStrength((byte) -4);
         });
     }
     
@@ -38,7 +44,7 @@ public class StatsTest {
     @Test
     void increaseDexterity(){
         setup();
-        s.increaseDexterity((byte)1);
+        s.addToDexterity((byte)1);
         assertEquals(3, s.getDexterity());
     }
     
@@ -46,7 +52,13 @@ public class StatsTest {
     void increaseDexterityOverflow(){
         setup();
         assertThrows(ArithmeticException.class, () -> {
-            s.increaseDexterity((byte) 127);
+            s.addToDexterity((byte) 127);
+        });
+    }
+    void dexterityBelowLowerBound(){
+        setup();
+        assertThrows(ArithmeticException.class, () -> {
+            s.addToDexterity((byte) -4);
         });
     }
     
@@ -59,7 +71,7 @@ public class StatsTest {
     @Test
     void increaseEndurance(){
         setup();
-        s.increaseEndurance((byte)1);
+        s.addToEndurance((byte)1);
         assertEquals(4, s.getEndurance());
     }
     
@@ -67,7 +79,7 @@ public class StatsTest {
     void increaseEnduranceOverflow(){
         setup();
         assertThrows(ArithmeticException.class, () -> {
-            s.increaseEndurance((byte) 127);
+            s.addToEndurance((byte) 127);
         });
     }
     
@@ -75,7 +87,7 @@ public class StatsTest {
     void enduranceBelowLowerBound(){
         setup();
         assertThrows(ArithmeticException.class, () -> {
-            s.increaseEndurance((byte) -4);
+            s.addToEndurance((byte) -4);
         });
     }
     

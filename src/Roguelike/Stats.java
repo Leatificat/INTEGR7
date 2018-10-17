@@ -30,7 +30,7 @@ public class Stats {
         return strength;
     }
     
-    public void increaseStrength(byte amountToAdd){
+    public void addToStrength(byte amountToAdd){
         isOverflow(strength, amountToAdd);
         strength = (byte)(strength + amountToAdd);
     }
@@ -38,7 +38,7 @@ public class Stats {
     public byte getDexterity(){
         return dexterity;
     }
-    public void increaseDexterity(byte amountToAdd){
+    public void addToDexterity(byte amountToAdd){
         isOverflow(dexterity, amountToAdd);
         dexterity = (byte)(dexterity + amountToAdd);
     }
@@ -47,7 +47,7 @@ public class Stats {
         return endurance;
     }
     
-    public void increaseEndurance(byte amountToAdd){
+    public void addToEndurance(byte amountToAdd){
         isOverflow(endurance, amountToAdd);
         endurance = (byte)(endurance + amountToAdd);
     }
@@ -60,7 +60,9 @@ public class Stats {
         return (endurance*2)+strength;
     }
     
-    public double getSpeed(){return (double)((endurance+dexterity))/2;}
+    public double getSpeed(){
+        return (double)((endurance+dexterity))/2;
+    }
     
     
 }
