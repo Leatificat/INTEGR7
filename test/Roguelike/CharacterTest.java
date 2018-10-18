@@ -1,27 +1,34 @@
 package Roguelike;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeAll;
 
-class CharacterTest {
-
-    Character character;
-
-
-
-    @Test
-    public void healthNegative(){
-        assertFalse(character.health<0);
+public class CharacterTest {
+    
+    Character c1;
+    Character c2;
+    Stats s;
+    
+    void setup(){
+        s = new Stats((byte)1, (byte)2, (byte)3, (byte)4);
+        c1 = new Character(s, 'P');
+        c2 = new Character(s, 'E');
     }
-
+    
     @Test
-    public void hasStats(){
-        assertNotNull(character.stats);
+    void getStats(){
+        setup();
+        assertEquals(s, c1.getStats());
     }
-
-    public void setup(){
-        Character character = new Character();
+    @Test
+    void getGraphicalRepresentation(){
+        setup();
+        assertEquals('P', c1.getGraphicalRepresentation());
+    }
+    
+    void performActionValidActionAndDirection(){
+        setup();
+        assertEquals(new int[]{1,2}, c1.performAction(1, 2));
     }
 }
