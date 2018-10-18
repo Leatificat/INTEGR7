@@ -10,10 +10,15 @@ public class Character extends GameObject{
         this.stats = stats;
         this.graphicalRepresentation = graphicalRepresentation;
     }
+    
     public Stats getStats(){
         return stats;
     }
+    
     public char getGraphicalRepresentation(){
         return graphicalRepresentation;
     }
+    
+    
+    
 }

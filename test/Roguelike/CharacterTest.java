@@ -5,23 +5,31 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CharacterTest {
     
-    Character c;
+    Character c1;
+    Character c2;
     Stats s;
     
     void setup(){
-        s = new Stats((byte)1, (byte)2, (byte)3);
-        c = new Character(s, 'P');
+        s = new Stats((byte)1, (byte)2, (byte)3, (byte)4);
+        c1 = new Character(s, 'P');
+        c2 = new Character(s, 'E');
     }
     
     @Test
     void getStats(){
         setup();
-        assertEquals(s, c.getStats());
+        assertEquals(s, c1.getStats());
     }
     @Test
     void getGraphicalRepresentation(){
         setup();
-        assertEquals('P', c.getGraphicalRepresentation());
+        assertEquals('P', c1.getGraphicalRepresentation());
+    }
+    
+    void performAction(){
+        setup();
+        c1.performAction(1, 1);
+        
     }
     
 }

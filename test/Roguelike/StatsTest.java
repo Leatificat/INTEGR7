@@ -92,6 +92,35 @@ public class StatsTest {
     }
     
     @Test
+    void getIntelligence(){
+        setup();
+        assertEquals(4, s.getIntelligence());
+    }
+    
+    @Test
+    void increaseIntelligence(){
+        setup();
+        s.addToIntelligence((byte)1);
+        assertEquals(5, s.getIntelligence());
+    }
+    
+    @Test
+    void increaseIntelligendeOverflow(){
+        setup();
+        assertThrows(ArithmeticException.class, () -> {
+            s.addToIntelligence((byte) 127);
+        });
+    }
+    
+    @Test
+    void intelligenceBelowLowerBound(){
+        setup();
+        assertThrows(ArithmeticException.class, () -> {
+            s.addToIntelligence((byte) -5);
+        });
+    }
+    
+    @Test
     void getHP(){
         setup();
         assertEquals(7, s.getHP());
@@ -103,6 +132,6 @@ public class StatsTest {
     }
     
     private void setup(){
-        s = new Stats((byte)1, (byte)2, (byte)3);
+        s = new Stats((byte)1, (byte)2, (byte)3, (byte)4);
     }
 }
