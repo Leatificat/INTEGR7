@@ -4,13 +4,14 @@ package Roguelike;
 
 public class Effect {
     private String name;
-    private int baseDuration;
+    private int expire;
 
-    public Effect(String name, int baseDuration){
+    public Effect(String name, int expire){
         this.name = name;
-        this.baseDuration = baseDuration;
+        this.expire = expire;
 
-        if(baseDuration<0){
+
+        if(expire<0){
             throw new IllegalArgumentException("Base duration below 0");
         }
     }
@@ -18,4 +19,7 @@ public class Effect {
     public String getName() {
         return name;
     }
+
+    public int getBaseDuration(){return expire;}
+
 }

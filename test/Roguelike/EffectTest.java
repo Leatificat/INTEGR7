@@ -30,6 +30,8 @@ class EffectTest {
 
 
 
+
+
     void setup(){
         effect = new Effect("TestName", 2);
     }
