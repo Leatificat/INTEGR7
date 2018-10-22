@@ -130,6 +130,11 @@ public class StatsTest {
         setup();
         assertEquals(2.5, s.getSpeed());
     }
+    @Test
+    void getBaseDamage(){
+        setup();
+        assertEquals(1, s.getBaseDamage());
+    }
     
     private void setup(){
         s = new Stats((byte)1, (byte)2, (byte)3, (byte)4);
