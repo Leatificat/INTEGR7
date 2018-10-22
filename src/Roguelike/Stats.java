@@ -76,5 +76,9 @@ public class Stats {
         return (double)((endurance+dexterity))/2;
     }
     
+    public int getBaseDamage(){
+        return strength;
+    }
+    
     
 }
