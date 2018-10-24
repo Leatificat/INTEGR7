@@ -20,6 +20,11 @@ class TerrainTest {
         assertEquals(true, terrainTest.isTraversible());
 
     }
+    @Test
+    public void getGraphicalRepresentation(){
+        setup();
+        assertEquals(' ', terrainTest.getGraphicalRepresentation());
+    }
 
 
     void setup() {
