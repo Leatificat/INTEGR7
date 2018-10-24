@@ -7,7 +7,7 @@ public class StatsTest {
     Stats s;
     
     @Test
-    void getStrength(){
+    void getStrength() {
         setup();
         assertEquals(1, s.getStrength());
     }
@@ -17,9 +17,7 @@ public class StatsTest {
         s.addToStrength((byte)1);
         assertEquals(2, s.getStrength());
     }
-    
 
-    
     @Test
     void increaseStrengthOverflow() {
         setup();
