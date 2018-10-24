@@ -16,15 +16,15 @@ public class Effect {
 
     public Effect(String name, int expire, int strength, int dexterity, int intelligence, int endurance){
         this.name = name;
-        this.expire = expire;
+        this.expire = expire + turn;
         this.strengthModifier=strength;
         this.dexterityModifier=dexterity;
         this.intelligenceModifier=intelligence;
         this.enduranceModifier=endurance;
 
 
-        if(expire<turn){
-            throw new IllegalArgumentException("Base duration below 0");
+        if(this.expire<turn){
+            throw new IllegalArgumentException("Effect expires before it starts.");
         }
     }
 
