@@ -19,9 +19,8 @@ public class Character extends GameObject{
         return graphicalRepresentation;
     }
     
-    public int[] performAction(int action, int direction){
-        int[] result = new DungeonMaster().performAction((GameObject)this, action, direction);
-        return result;
+    public void performAction(int action, int direction){
+        DungeonMaster.getInstance().performAction((GameObject)this, action, direction);
     }
     
 }
