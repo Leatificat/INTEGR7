@@ -11,8 +11,6 @@ public Terrain(char graphicalRepresentation, boolean isTraversible, int moveCost
       this.graphicalRepresentation = graphicalRepresentation;
       this.isTraversible = isTraversible;
       this.moveCost = moveCost;
-
-
 }
 
 public char getGraphicalRepresentation(){
