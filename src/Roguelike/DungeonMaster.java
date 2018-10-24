@@ -7,10 +7,28 @@ package Roguelike;
 
 public class DungeonMaster{
     
+    private static DungeonMaster instance;
+    private int[] currentAction;
+    
+    private DungeonMaster(){
+    
+    }
+    
     //Direction indikerar riktningen i vilken handlingen utförs, där 1 är norrut och sedan medsols till 4, som är
     //västerut. Action är en numerisk representation av typen av handling. Ska returnera void, returnerar nu en int[]
     //för testningens skull.
-    public int[] performAction(GameObject gameObject, int action, int direction){
-        return new int[]{action, direction};
+    
+    public static DungeonMaster getInstance(){
+        if(instance != null){
+            return instance;
+        }
+        instance = new DungeonMaster();
+        return instance;
+    }
+    public void performAction(GameObject gameObject, int action, int direction){
+        currentAction = new int[]{action, direction};
+    }
+    public int[] getCurrentAction(){
+        return currentAction;
     }
 }
