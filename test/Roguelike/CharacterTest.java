@@ -26,7 +26,7 @@ public class CharacterTest {
         setup();
         assertEquals('P', c1.getGraphicalRepresentation());
     }
-    
+
     void performActionValidActionAndDirection(){
         setup();
         assertEquals(new int[]{1,2}, c1.performAction(1, 2));

@@ -27,6 +27,7 @@ public class StatsTest {
             s.addToStrength((byte) 127);
         });
     }
+    @Test
     void strengthBelowLowerBound(){
         setup();
         assertThrows(ArithmeticException.class, () -> {
@@ -55,6 +56,7 @@ public class StatsTest {
             s.addToDexterity((byte) 127);
         });
     }
+    @Test
     void dexterityBelowLowerBound(){
         setup();
         assertThrows(ArithmeticException.class, () -> {
