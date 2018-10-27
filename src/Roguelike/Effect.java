@@ -14,6 +14,15 @@ public class Effect {
     private int enduranceModifier;
 
 
+    public Effect(String name, int strength, int dexterity, int intelligence, int endurance) {
+        this.name = name;
+        this.expire = -1;
+        this.strengthModifier = strength;
+        this.dexterityModifier = dexterity;
+        this.intelligenceModifier = intelligence;
+        this.enduranceModifier = endurance;
+    }
+
     public Effect(String name, int expire, int strength, int dexterity, int intelligence, int endurance){
         this.name = name;
         this.expire = expire + turn;
@@ -31,7 +40,7 @@ public class Effect {
     public String getName() {
         return name;
     }
-
+    public int getExpire(){return expire;}
     public int getStrength(){
         return strengthModifier;
     }

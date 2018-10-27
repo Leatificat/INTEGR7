@@ -26,6 +26,11 @@ class EffectTest {
             setup("ExpTest",-1,0,0,0,0);
         });
     }
+    @Test
+    void checkTimelessEffect(){
+        effect = new Effect("Endless Effect", 1, 1, 1, 1);
+        assertEquals(-1,effect.getExpire());
+    }
 
     @Test
     void testValidStrengthModifierNegative(){
