@@ -3,7 +3,7 @@ package Roguelike;
 
 
 public class Effect {
-    private int turn; //Aktiv turn i spelet,
+    private int turn =3; //Aktiv turn i spelet,
     // ska egentligen refereras till en klocka utanför denna logik men behövs för test
 
     private String name;
@@ -30,7 +30,6 @@ public class Effect {
         this.dexterityModifier=dexterity;
         this.intelligenceModifier=intelligence;
         this.enduranceModifier=endurance;
-
 
         if(this.expire<turn){
             throw new IllegalArgumentException("Effect expires before it starts.");
