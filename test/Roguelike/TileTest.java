@@ -12,7 +12,7 @@ public class TileTest {
     private void setup(){
         t = new Terrain(' ', true, 1);
         c = new Character(new Stats((byte)1,(byte)1,(byte)1,(byte)1), 'C');
-        i = new Item("Sword", '|');
+        i = new Item("Sword", '|',new ItemType(true,false,false,false,false));
         tile = new Tile();
         tile.addGameObject(t, c, i);
     }

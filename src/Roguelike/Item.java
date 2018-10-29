@@ -4,15 +4,18 @@ public class Item extends GameObject{
 
     private String name;
     private char graphicalRepresentation;
+    private ItemType type;
     private Effect effect;
 
-    public Item(String name, char graphicalRepresentation) {
+    public Item(String name, char graphicalRepresentation, ItemType type) {
         this.name = name;
         this.graphicalRepresentation = graphicalRepresentation;
+        this.type=type;
     }
-    public Item(String name, char graphicalRepresentation,String effName, int expire, int strength, int dexterity, int intelligence, int endurance){
+    public Item(String name, char graphicalRepresentation,ItemType type, String effName, int expire, int strength, int dexterity, int intelligence, int endurance){
         this.name = name;
         this.graphicalRepresentation = graphicalRepresentation;
+        this.type = type;
         this.effect = new Effect(effName,expire,strength,dexterity,intelligence,endurance);
     }
 
@@ -22,6 +25,7 @@ public class Item extends GameObject{
     public Effect getEffect(){
         return effect;
     }
+    public ItemType getType(){return type;}
 
 
 

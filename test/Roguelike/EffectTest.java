@@ -21,7 +21,7 @@ class EffectTest {
     }
 
     @Test
-    void checkExpireTurnNotPassed(){
+    void checkExpireTurnAlreadyPassed(){
         assertThrows(IllegalArgumentException.class, () ->{
             setup("ExpTest",-1,0,0,0,0);
         });
@@ -38,9 +38,6 @@ class EffectTest {
         assertEquals(-1,effect.getExpire());
     }
 
-    void setup(String name, int exp, int str, int dex, int inte, int end){
-        effect = new Effect(name, exp, str, dex, inte, end);
-    }
 
     @Test
     void testValidStrengthModifierNegative(){
@@ -109,7 +106,9 @@ class EffectTest {
 
 
 
-
+    void setup(String name, int exp, int str, int dex, int inte, int end){
+        effect = new Effect(name, exp, str, dex, inte, end);
+    }
 
 
 
