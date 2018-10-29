@@ -14,7 +14,7 @@ public class TileTest {
         c = new Character(new Stats((byte)1,(byte)1,(byte)1,(byte)1), 'C');
         i = new Item("Sword", '|',new ItemType(true,false,false,false,false));
         tile = new Tile();
-        tile.addGameObject(t, c, i);
+        tile.addGameObject(t, i, c);
     }
     
     @Test

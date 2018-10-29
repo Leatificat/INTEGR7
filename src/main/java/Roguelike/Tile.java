@@ -7,20 +7,34 @@ import java.util.ArrayList;
 
 public class Tile {
     
-    private ArrayList<GameObject> gameObjects = new ArrayList();
+    private GameObject[] gameObjects = new GameObject[3];
     
     public GameObject[] getGameObjects(){
-        GameObject[] objects = new GameObject[gameObjects.size()];
+        GameObject[] objects = new GameObject[gameObjects.length];
         for(int i = 0 ; i < objects.length ; i++){
-            objects[i] = gameObjects.get(i);
+            objects[i] = gameObjects[i];
         }
         return objects;
-        
+    }
+    private void removeAllTerrain(){
+        for(int i = 0 ; i < gameObjects.length ; i++){
+            if(gameObjects[i] instanceof Terrain){
+                gameObjects[i] = null;
+            }
+        }
     }
     
     public void addGameObject(GameObject... o){
-        for(GameObject object : o){
-            gameObjects.add(object);
+        for(int i = 0 ; i < o.length ; i++){
+            if(o[i] instanceof Terrain){
+                gameObjects[0] = o[i];
+            }
+            if(o[i] instanceof Character){
+                gameObjects[1] = o[i];
+            }
+            if(o[i] instanceof Item){
+                gameObjects[2] = o[i];
+            }
         }
     }
 }
