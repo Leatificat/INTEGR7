@@ -23,9 +23,4 @@ public class Tile {
             gameObjects.add(object);
         }
     }
-    public void removeGameObject(GameObject o){
-        if(gameObjects.contains(o)) {
-            gameObjects.remove(o);
-        }
-    }
 }
