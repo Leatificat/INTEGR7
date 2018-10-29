@@ -17,4 +17,15 @@ public class DungeonDataStructureTest {
         assertEquals(DungeonDataStructure.getInstance(), data);
     }
     
+    @Test
+    void getTileTest(){
+        setup();
+        Tile t = data.getTile(0,0,0);
+        Terrain terrain = new Terrain(' ', true, 1);
+        t.addGameObject(terrain);
+        
+        assertEquals(terrain, t.getGameObjects()[0]);
+        
+    }
+    
 }

@@ -26,4 +26,8 @@ public class DungeonDataStructure {
             }
         }
     }
+    public Tile getTile(int x, int y, int z){
+        return tiles[z][y][x];
+    }
+    
 }
