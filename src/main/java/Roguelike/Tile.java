@@ -16,13 +16,6 @@ public class Tile {
         }
         return objects;
     }
-    private void removeAllTerrain(){
-        for(int i = 0 ; i < gameObjects.length ; i++){
-            if(gameObjects[i] instanceof Terrain){
-                gameObjects[i] = null;
-            }
-        }
-    }
     
     public void addGameObject(GameObject... o){
         for(int i = 0 ; i < o.length ; i++){
