@@ -12,11 +12,11 @@ public class Item extends GameObject{
         this.graphicalRepresentation = graphicalRepresentation;
         this.type=type;
     }
-    public Item(String name, char graphicalRepresentation,ItemType type, String effName, int expire, int strength, int dexterity, int intelligence, int endurance){
+    public Item(String name, char graphicalRepresentation,ItemType type, Effect effect){
         this.name = name;
         this.graphicalRepresentation = graphicalRepresentation;
         this.type = type;
-        this.effect = new Effect(effName,expire,strength,dexterity,intelligence,endurance);
+        this.effect = effect;
     }
 
     public String getName() {

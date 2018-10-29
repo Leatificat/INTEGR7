@@ -56,6 +56,23 @@ class ItemTest {
         assertTrue(testItem.getType().isTrinket());
     }
 
+    @Test
+    void bigItemStrengthPotionTest(){
+        testItem = new Item("Intellect Potion + 5", 'h', new ItemType(false, false, false, true, false), new Effect("+5 INT", 10, 0,0,5,0));
+        assertEquals('h',testItem.getGraphicalRepresentation());
+        assertTrue(testItem.getType().isConsumable());
+        assertEquals(5,testItem.getEffect().getIntelligence());
+        assertEquals(13,testItem.getEffect().getExpire());
+    }
+    @Test
+    void bigItemSwordTest(){
+        testItem = new Item("Rusted Sword", '|', new ItemType(true, false,false,false,false), new Effect("Rusted Sword",5,2,0,0));
+        assertEquals('|', testItem.getGraphicalRepresentation());
+        assertTrue(testItem.getType().isWeapon());
+        assertEquals(5, testItem.getEffect().getStrength());
+        assertEquals(-1, testItem.getEffect().getExpire());
+    }
+
 
 
 
@@ -64,7 +81,7 @@ class ItemTest {
         testItem = new Item("Hej", 'k',createItemType());
     }
     void setupWithEffect(String effName, int exp, int str, int dex, int inte, int endu){
-        testItem = new Item("Hej", 'k',createItemType(),effName,exp,str,dex,inte,endu);
+        testItem = new Item("Hej", 'k',createItemType(),new Effect(effName,exp,str,dex,inte,endu));
     }
     ItemType createItemType() {
         return new ItemType(false, false, false, true, false);
