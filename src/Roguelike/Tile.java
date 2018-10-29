@@ -24,6 +24,8 @@ public class Tile {
         }
     }
     public void removeGameObject(GameObject o){
-    
+        if(gameObjects.contains(o)) {
+            gameObjects.remove(o);
+        }
     }
 }
