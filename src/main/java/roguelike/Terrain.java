@@ -2,9 +2,9 @@ package roguelike;
 
 public class Terrain extends GameObject{
 
-private char graphicalRepresentation;
-private boolean isTraversible;
-private int moveCost;
+private final char graphicalRepresentation;
+private final boolean isTraversible;
+private final int moveCost;
 
 
 public Terrain(char graphicalRepresentation, boolean isTraversible, int moveCost){

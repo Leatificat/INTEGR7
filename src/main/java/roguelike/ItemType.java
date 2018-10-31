@@ -1,11 +1,11 @@
 package roguelike;
 
 public class ItemType {
-    private boolean isWeapon;
-    private boolean isArmor;
-    private boolean isHelmet;
-    private boolean isConsumable;
-    private boolean isTrinket;
+    private final boolean isWeapon;
+    private final boolean isArmor;
+    private final boolean isHelmet;
+    private final boolean isConsumable;
+    private final boolean isTrinket;
     
     public ItemType(boolean isWeapon, boolean isArmor, boolean isHelmet, boolean isConsumable, boolean isTrinket){
         this.isWeapon = isWeapon;
