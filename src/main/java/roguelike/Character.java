@@ -2,8 +2,8 @@ package roguelike;
 
 public class Character extends GameObject{
     
-    private Stats stats;
-    private char graphicalRepresentation;
+    private final Stats stats;
+    private final char graphicalRepresentation;
     
     
     public Character(Stats stats, char graphicalRepresentation){
@@ -20,7 +20,7 @@ public class Character extends GameObject{
     }
     
     public void performAction(int action, int direction){
-        DungeonMaster.getInstance().performAction((GameObject)this, action, direction);
+        DungeonMaster.getInstance().performAction(this, action, direction);
     }
     
 }

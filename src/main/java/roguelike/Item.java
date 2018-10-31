@@ -2,9 +2,9 @@ package roguelike;
 
 public class Item extends GameObject{
 
-    private String name;
-    private char graphicalRepresentation;
-    private ItemType type;
+    private final String name;
+    private final char graphicalRepresentation;
+    private final ItemType type;
     private Effect effect;
 
     public Item(String name, char graphicalRepresentation, ItemType type) {

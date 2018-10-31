@@ -17,7 +17,7 @@ class TerrainTest {
     @Test
     public void isTraversible(){
         setup();
-        assertEquals(true, terrainTest.isTraversible());
+        assertTrue(terrainTest.isTraversible());
 
     }
     @Test
