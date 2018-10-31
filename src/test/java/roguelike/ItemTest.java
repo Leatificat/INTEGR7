@@ -1,4 +1,4 @@
-package Roguelike;
+package roguelike;
 
 import org.junit.jupiter.api.Test;
 

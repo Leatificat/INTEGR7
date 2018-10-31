@@ -1,9 +1,7 @@
 //Tile representerar en position på kartan och innehåller en ArrayList med alla GameObjects på denna position.
 //Detta inkluderar inte GameObject som finns i ett annat GameObject, utan bara den lägsta nivån i datastrukturen.
 
-package Roguelike;
-
-import java.util.ArrayList;
+package roguelike;
 
 public class Tile {
     
