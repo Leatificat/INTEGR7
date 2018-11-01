@@ -1,4 +1,4 @@
-package Roguelike;
+package roguelike;
 
 public class DungeonDataStructure {
     private static DungeonDataStructure data;

@@ -1,17 +1,17 @@
-package Roguelike;
+package roguelike;
 
 
 
 public class Effect {
-    private int turn =3; //Aktiv turn i spelet,
+    private static int turn =3; //Aktiv turn i spelet,
     // ska egentligen refereras till en klocka utanför denna logik men behövs för test
 
-    private String name;
-    private int expire;
-    private int strengthModifier;
-    private int dexterityModifier;
-    private int intelligenceModifier;
-    private int enduranceModifier;
+    private final String name;
+    private final int expire;
+    private final int strengthModifier;
+    private final int dexterityModifier;
+    private final int intelligenceModifier;
+    private final int enduranceModifier;
 
 
     public Effect(String name, int strength, int dexterity, int intelligence, int endurance) {

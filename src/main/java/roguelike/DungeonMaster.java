@@ -1,4 +1,4 @@
-package Roguelike;
+package roguelike;
 
 //DungeonMaster är för stunden bara en dummyklass för att möjliggöra testande i Character. Lägg till vadhelst som behövs
 //i den så länge som det inte krockar med något annat.

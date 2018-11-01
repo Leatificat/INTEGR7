@@ -1,9 +1,8 @@
-package Roguelike;
+package roguelike;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class ItemTypeTest {
     ItemType t;
@@ -14,27 +13,27 @@ public class ItemTypeTest {
     @Test
     void isWeapon(){
         setup();
-        assertEquals(false, t.isWeapon());
+        assertFalse(t.isWeapon());
     }
     @Test
     void isArmor(){
         setup();
-        assertEquals(false, t.isArmor());
+        assertFalse(t.isArmor());
     }
     @Test
     void isHelmet(){
         setup();
-        assertEquals(false, t.isHelmet());
+        assertFalse(t.isHelmet());
     }
     @Test
     void isConsumable(){
         setup();
-        assertEquals(false, t.isConsumable());
+        assertFalse(t.isConsumable());
     }
     @Test
     void isTrinket(){
         setup();
-        assertEquals(false, t.isTrinket());
+        assertFalse(t.isTrinket());
     }
     
     @Test

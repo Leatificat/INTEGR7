@@ -1,4 +1,4 @@
-package Roguelike;
+package roguelike;
 
 public class Stats {
     
@@ -21,8 +21,8 @@ public class Stats {
         this.intelligence = intelligence;
     }
     
-    public void isOverflow(byte old, byte toAdd){
-        if((int)((int)old+(int)toAdd) != (byte)(old+toAdd)){
+    private void isOverflow(byte old, byte toAdd){
+        if(((int)old+(int)toAdd) != (byte)(old+toAdd)){
             throw new ArithmeticException("Overflow in stat!");
         }
         if(old+toAdd < 1){
