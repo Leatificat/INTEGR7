@@ -22,5 +22,9 @@ public class Character extends GameObject{
     public void performAction(int action, int direction){
         DungeonMaster.getInstance().performAction((GameObject)this, action, direction);
     }
+    public boolean isAlive(){
+        return (stats.getHP() < 1);
+    }
+    
     
 }

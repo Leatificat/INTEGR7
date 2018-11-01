@@ -37,5 +37,25 @@ public class ItemTypeTest {
         assertEquals(false, t.isTrinket());
     }
     
-    
+    @Test
+    void truthTablesTest(){
+        boolean[] bools = new boolean[]{true, true, true, true, true};
+        for(int i1 = 0 ; i1 < bools.length ; i1++){
+            for(int i2 = 0 ; i2 < bools.length ; i2++){
+                for(int i3 = 0 ; i3 < bools.length ; i3++){
+                    for(int i4 = 0  ; i4 < bools.length ; i4++){
+                        for(int i5 = 0 ; i5 < bools.length ; i5++){
+                            ItemType t = new ItemType(bools[0], bools[1], bools[2], bools[3], bools[4]);
+                            assertEquals(bools[0], t.isWeapon());
+                            assertEquals(bools[1], t.isArmor());
+                            assertEquals(bools[2], t.isHelmet());
+                            assertEquals(bools[3], t.isConsumable());
+                            assertEquals(bools[4], t.isTrinket());
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
 }

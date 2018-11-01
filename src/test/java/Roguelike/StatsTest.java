@@ -11,6 +11,14 @@ public class StatsTest {
         setup();
         assertEquals(1, s.getStrength());
     }
+    
+    @Test
+    void strTooLow(){
+        
+        assertThrows(ArithmeticException.class, () -> {
+            Stats s2 = new Stats((byte)-1, (byte)1,(byte)1,(byte)1);
+        });
+    }
     @Test
     void increaseStrength(){
         setup();
@@ -37,6 +45,13 @@ public class StatsTest {
     void getDexterity(){
         setup();
         assertEquals(2, s.getDexterity());
+    }
+    @Test
+    void dexTooLow(){
+        
+        assertThrows(ArithmeticException.class, () -> {
+            Stats s2 = new Stats((byte)1, (byte)-1,(byte)1,(byte)1);
+        });
     }
 
     
@@ -67,6 +82,13 @@ public class StatsTest {
         setup();
         assertEquals(3, s.getEndurance());
     }
+    @Test
+    void endTooLow(){
+        
+        assertThrows(ArithmeticException.class, () -> {
+            Stats s2 = new Stats((byte)1, (byte)1,(byte)-1,(byte)1);
+        });
+    }
     
     @Test
     void increaseEndurance(){
@@ -95,6 +117,13 @@ public class StatsTest {
     void getIntelligence(){
         setup();
         assertEquals(4, s.getIntelligence());
+    }
+    @Test
+    void intTooLow(){
+        
+        assertThrows(ArithmeticException.class, () -> {
+            Stats s2 = new Stats((byte)-1, (byte)1,(byte)1,(byte)1);
+        });
     }
     
     @Test

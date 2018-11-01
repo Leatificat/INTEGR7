@@ -12,6 +12,9 @@ public class Stats {
     
     
     public Stats(byte strength, byte dexterity, byte endurance, byte intelligence){
+        if(strength < 1 || dexterity < 1 || endurance < 1 || intelligence < 1){
+            throw new ArithmeticException();
+        }
         this.strength = strength;
         this.dexterity = dexterity;
         this.endurance = endurance;
